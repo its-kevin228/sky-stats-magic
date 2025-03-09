@@ -43,21 +43,21 @@ const Index = () => {
         {loading && <WeatherLoader />}
       </AnimatePresence>
       
-      <main className="flex-grow container mx-auto px-4 py-8">
+      <main className="flex-grow container mx-auto px-4 py-6 md:py-8 lg:py-10">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mb-8 text-center"
+          className="mb-6 md:mb-8 text-center"
         >
-          <div className="inline-block mb-2 px-3 py-1 rounded-full bg-weather-blue/10 text-weather-blue text-sm font-medium">
+          <div className="inline-block mb-2 px-3 py-1 rounded-full bg-weather-blue/10 text-weather-blue text-xs md:text-sm font-medium">
             Weather Forecast
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-weather-darkBlue">Premium Weather App</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-weather-darkBlue">Premium Weather App</h1>
         </motion.div>
         
         {weatherData && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             <WeatherCard
               city={weatherData.city}
               temperature={weatherData.temperature}

@@ -18,12 +18,12 @@ const Footer = ({ className }: FooterProps) => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.2 }}
       className={cn(
-        "w-full backdrop-blur-md bg-white/80 dark:bg-gray-900/70 border-t border-gray-200/50 dark:border-gray-800/50 py-8",
+        "w-full backdrop-blur-md bg-white/80 dark:bg-gray-900/70 border-t border-gray-200/50 dark:border-gray-800/50 py-6 md:py-8",
         className
       )}
     >
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {/* Logo and description */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
@@ -37,20 +37,20 @@ const Footer = ({ className }: FooterProps) => {
                 SkyStats
               </span>
             </div>
-            <p className="text-sm text-gray-600 dark:text-gray-300">
+            <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">
               Votre application météo complète, avec des prévisions détaillées, des alertes et des cartes interactives pour planifier vos journées en toute confiance.
             </p>
-            <div className="flex space-x-4 pt-2">
-              <SocialLink href="https://github.com" icon={<Github size={18} />} />
-              <SocialLink href="https://twitter.com" icon={<Twitter size={18} />} />
-              <SocialLink href="https://facebook.com" icon={<Facebook size={18} />} />
-              <SocialLink href="https://instagram.com" icon={<Instagram size={18} />} />
+            <div className="flex space-x-3 pt-2">
+              <SocialLink href="https://github.com" icon={<Github size={16} />} />
+              <SocialLink href="https://twitter.com" icon={<Twitter size={16} />} />
+              <SocialLink href="https://facebook.com" icon={<Facebook size={16} />} />
+              <SocialLink href="https://instagram.com" icon={<Instagram size={16} />} />
             </div>
           </div>
 
           {/* Navigation links */}
           <div>
-            <h3 className="font-medium text-gray-900 dark:text-gray-100 mb-4">Navigation</h3>
+            <h3 className="font-medium text-gray-900 dark:text-gray-100 mb-3 md:mb-4 text-sm sm:text-base">Navigation</h3>
             <ul className="space-y-2">
               <FooterLink href="/">Tableau de bord</FooterLink>
               <FooterLink href="/forecast">Prévisions</FooterLink>
@@ -61,7 +61,7 @@ const Footer = ({ className }: FooterProps) => {
 
           {/* Services */}
           <div>
-            <h3 className="font-medium text-gray-900 dark:text-gray-100 mb-4">Services</h3>
+            <h3 className="font-medium text-gray-900 dark:text-gray-100 mb-3 md:mb-4 text-sm sm:text-base">Services</h3>
             <ul className="space-y-2">
               <FooterLink href="/premium">Premium</FooterLink>
               <FooterLink href="/api">API</FooterLink>
@@ -72,20 +72,20 @@ const Footer = ({ className }: FooterProps) => {
 
           {/* Contact */}
           <div>
-            <h3 className="font-medium text-gray-900 dark:text-gray-100 mb-4">Contact</h3>
-            <ul className="space-y-3">
-              <li className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-300">
-                <MapPin size={16} className="text-weather-blue" />
+            <h3 className="font-medium text-gray-900 dark:text-gray-100 mb-3 md:mb-4 text-sm sm:text-base">Contact</h3>
+            <ul className="space-y-2">
+              <li className="flex items-center space-x-2 text-xs sm:text-sm text-gray-600 dark:text-gray-300">
+                <MapPin size={14} className="text-weather-blue flex-shrink-0" />
                 <span>123 Rue de la Météo, Paris</span>
               </li>
-              <li className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-300">
-                <Mail size={16} className="text-weather-blue" />
-                <a href="mailto:contact@skystats.com" className="hover:text-weather-blue transition-colors">
+              <li className="flex items-center space-x-2 text-xs sm:text-sm text-gray-600 dark:text-gray-300">
+                <Mail size={14} className="text-weather-blue flex-shrink-0" />
+                <a href="mailto:contact@skystats.com" className="hover:text-weather-blue transition-colors truncate">
                   contact@skystats.com
                 </a>
               </li>
-              <li className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-300">
-                <Phone size={16} className="text-weather-blue" />
+              <li className="flex items-center space-x-2 text-xs sm:text-sm text-gray-600 dark:text-gray-300">
+                <Phone size={14} className="text-weather-blue flex-shrink-0" />
                 <a href="tel:+33123456789" className="hover:text-weather-blue transition-colors">
                   +33 1 23 45 67 89
                 </a>
@@ -94,24 +94,24 @@ const Footer = ({ className }: FooterProps) => {
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-800">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-gray-500 dark:text-gray-400">
+        <div className="mt-6 md:mt-8 pt-4 md:pt-6 border-t border-gray-200 dark:border-gray-800">
+          <div className="flex flex-col sm:flex-row justify-between items-center">
+            <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mb-4 sm:mb-0">
               © {currentYear} SkyStats. Tous droits réservés.
             </p>
-            <div className="flex items-center space-x-4 mt-4 md:mt-0">
-              <span className="flex items-center text-sm text-gray-500 dark:text-gray-400">
-                Fait avec <Heart size={14} className="mx-1 text-red-500" /> en France
+            <div className="flex flex-wrap justify-center items-center gap-4">
+              <span className="flex items-center text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+                Fait avec <Heart size={12} className="mx-1 text-red-500" /> en France
               </span>
               <a 
                 href="/terms" 
-                className="text-sm text-gray-500 dark:text-gray-400 hover:text-weather-blue transition-colors"
+                className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 hover:text-weather-blue transition-colors"
               >
                 Mentions légales
               </a>
               <a 
                 href="/privacy" 
-                className="text-sm text-gray-500 dark:text-gray-400 hover:text-weather-blue transition-colors"
+                className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 hover:text-weather-blue transition-colors"
               >
                 Confidentialité
               </a>
@@ -119,11 +119,11 @@ const Footer = ({ className }: FooterProps) => {
           </div>
 
           {/* Special mapbox attribution for the Maps page */}
-          <div className="mt-4 text-xs text-center text-gray-400 flex justify-center items-center">
+          <div className="mt-3 md:mt-4 text-xs text-center text-gray-400 flex flex-wrap justify-center items-center gap-1">
             <span>Données cartographiques © </span>
             <a 
               href="https://www.mapbox.com/" 
-              className="ml-1 flex items-center hover:text-weather-blue transition-colors"
+              className="flex items-center hover:text-weather-blue transition-colors"
               target="_blank" 
               rel="noopener noreferrer"
             >
@@ -154,7 +154,7 @@ const SocialLink = ({ href, icon }: { href: string; icon: React.ReactNode }) => 
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-weather-blue hover:text-white transition-colors"
+      className="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-weather-blue hover:text-white transition-colors"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >
@@ -169,7 +169,7 @@ const FooterLink = ({ href, children }: { href: string; children: React.ReactNod
     <li>
       <Link 
         to={href} 
-        className="text-sm text-gray-600 dark:text-gray-300 hover:text-weather-blue transition-colors"
+        className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 hover:text-weather-blue transition-colors"
       >
         {children}
       </Link>

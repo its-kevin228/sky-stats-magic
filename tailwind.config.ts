@@ -19,6 +19,15 @@ export default {
 			}
 		},
 		extend: {
+			screens: {
+				'xs': '480px',
+				// Default tailwind breakpoints maintained as-is
+				'sm': '640px',
+				'md': '768px',
+				'lg': '1024px',
+				'xl': '1280px',
+				'2xl': '1536px',
+			},
 			fontFamily: {
 				'inter': ['Inter', 'sans-serif'],
 			},
@@ -120,6 +129,14 @@ export default {
         'float': {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-10px)' }
+        },
+        'fade-in-left': {
+          '0%': { opacity: '0', transform: 'translateX(-10px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' }
+        },
+        'fade-in-right': {
+          '0%': { opacity: '0', transform: 'translateX(10px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' }
         }
 			},
 			animation: {
@@ -132,7 +149,9 @@ export default {
         'slide-in': 'slide-in 0.3s ease-out',
         'slide-out': 'slide-out 0.3s ease-out',
         'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
-        'float': 'float 6s ease-in-out infinite'
+        'float': 'float 6s ease-in-out infinite',
+        'fade-in-left': 'fade-in-left 0.5s ease-out',
+        'fade-in-right': 'fade-in-right 0.5s ease-out'
 			},
       boxShadow: {
         'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
