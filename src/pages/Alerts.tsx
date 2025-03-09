@@ -1,8 +1,8 @@
-
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { AlertTriangle, Info, MapPin, Bell, BellOff, AlertCircle, Shield, Wind, Thermometer } from 'lucide-react';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import { AlertTriangle, Info, MapPin, Bell, BellOff, AlertCircle, Shield, Wind, Thermometer } from 'lucide-react';
 
 const alertsData = [
   {
@@ -58,23 +58,8 @@ const alertsData = [
 ];
 
 const Alerts = () => {
-  const [alerts, setAlerts] = useState(alertsData);
-  const [filter, setFilter] = useState('all');
-
-  const toggleAlertActive = (id: number) => {
-    setAlerts(alerts.map(alert => 
-      alert.id === id ? { ...alert, active: !alert.active } : alert
-    ));
-  };
-
-  const filteredAlerts = filter === 'all' 
-    ? alerts 
-    : filter === 'active' 
-      ? alerts.filter(alert => alert.active) 
-      : alerts.filter(alert => !alert.active);
-
   return (
-    <div className="min-h-screen bg-weather-bg">
+    <div className="min-h-screen flex flex-col bg-weather-bg">
       <Navbar />
       
       <div className="container mx-auto px-4 py-8">
@@ -217,6 +202,8 @@ const Alerts = () => {
           </div>
         </motion.div>
       </div>
+      
+      <Footer />
     </div>
   );
 };

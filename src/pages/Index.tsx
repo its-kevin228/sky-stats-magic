@@ -8,6 +8,7 @@ import CitySelector from '@/components/CitySelector';
 import DailyForecast from '@/components/DailyForecast';
 import WeatherLoader from '@/components/WeatherLoader';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import { getWeatherData, type WeatherData } from '@/lib/weatherData';
 
 const Index = () => {
@@ -35,14 +36,14 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-weather-bg">
+    <div className="min-h-screen flex flex-col bg-weather-bg">
       <Navbar />
       
       <AnimatePresence>
         {loading && <WeatherLoader />}
       </AnimatePresence>
       
-      <div className="container mx-auto px-4 py-8">
+      <main className="flex-grow container mx-auto px-4 py-8">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -102,7 +103,9 @@ const Index = () => {
             />
           </div>
         )}
-      </div>
+      </main>
+      
+      <Footer />
     </div>
   );
 };

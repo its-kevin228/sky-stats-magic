@@ -1,10 +1,13 @@
-
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Cloud, Droplets, Wind, Thermometer } from 'lucide-react';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import { getWeatherData, type WeatherData } from '@/lib/weatherData';
 import WeatherLoader from '@/components/WeatherLoader';
+import Cloud from 'lucide-react';
+import Droplets from 'lucide-react';
+import Wind from 'lucide-react';
+import Thermometer from 'lucide-react';
 
 const Forecast = () => {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
@@ -30,7 +33,7 @@ const Forecast = () => {
   if (loading) return <WeatherLoader />;
 
   return (
-    <div className="min-h-screen bg-weather-bg">
+    <div className="min-h-screen flex flex-col bg-weather-bg">
       <Navbar />
       
       <div className="container mx-auto px-4 py-8">
@@ -139,6 +142,7 @@ const Forecast = () => {
           </motion.div>
         )}
       </div>
+      <Footer />
     </div>
   );
 };
@@ -165,7 +169,6 @@ const getWeatherIcon = (weatherType: string) => {
 };
 
 const getDetailedWeatherIcon = (weatherType: string) => {
-  // Same as above but smaller
   switch (weatherType) {
     case 'sunny':
       return <div className="w-6 h-6 flex items-center justify-center bg-yellow-400 rounded-full text-white"><Cloud className="opacity-0" size={10} /></div>;
