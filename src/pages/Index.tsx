@@ -14,7 +14,7 @@ import { getWeatherData, type WeatherData } from '@/lib/weatherData';
 const Index = () => {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(true);
-  const [city, setCity] = useState('Paris');
+  const [city, setCity] = useState('Lomé');
 
   useEffect(() => {
     const fetchWeatherData = async () => {
@@ -36,7 +36,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-weather-bg">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-white to-blue-50/30">
       <Navbar />
       
       <AnimatePresence>
@@ -51,9 +51,9 @@ const Index = () => {
           className="mb-6 md:mb-8 text-center"
         >
           <div className="inline-block mb-2 px-3 py-1 rounded-full bg-weather-blue/10 text-weather-blue text-xs md:text-sm font-medium">
-            Weather Forecast
+            Prévisions Météo
           </div>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-weather-darkBlue">Premium Weather App</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-weather-darkBlue">Application Météo Premium</h1>
         </motion.div>
         
         {weatherData && (

@@ -11,47 +11,47 @@ interface FooterProps {
 
 const Footer = ({ className }: FooterProps) => {
   const currentYear = new Date().getFullYear();
-  
+
   return (
-    <motion.footer 
+    <motion.footer
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.2 }}
       className={cn(
-        "w-full backdrop-blur-md bg-white/80 dark:bg-gray-900/70 border-t border-gray-200/50 dark:border-gray-800/50 py-6 md:py-8",
+        "w-full backdrop-blur-md bg-white/98 border-t border-gray-200/50 py-4 md:py-6 text-gray-700",
         className
       )}
     >
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+      <div className="container mx-auto px-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
           {/* Logo and description */}
-          <div className="space-y-4">
+          <div className="space-y-2 col-span-2 sm:col-span-1">
             <div className="flex items-center space-x-2">
-              <motion.div 
+              <motion.div
                 whileHover={{ rotate: 20 }}
                 className="text-weather-blue"
               >
-                <MapPin size={24} className="text-weather-blue" />
+                <MapPin size={20} className="text-weather-blue" />
               </motion.div>
-              <span className="text-lg font-bold bg-clip-text text-transparent bg-blue-gradient">
+              <span className="text-base font-bold bg-clip-text text-transparent bg-blue-gradient">
                 SkyStats
               </span>
             </div>
-            <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">
-              Votre application météo complète, avec des prévisions détaillées, des alertes et des cartes interactives pour planifier vos journées en toute confiance.
+            <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
+              Votre application météo complète, avec des prévisions détaillées, des alertes et des cartes interactives.
             </p>
-            <div className="flex space-x-3 pt-2">
-              <SocialLink href="https://github.com" icon={<Github size={16} />} />
-              <SocialLink href="https://twitter.com" icon={<Twitter size={16} />} />
-              <SocialLink href="https://facebook.com" icon={<Facebook size={16} />} />
-              <SocialLink href="https://instagram.com" icon={<Instagram size={16} />} />
+            <div className="flex space-x-2 pt-1">
+              <SocialLink href="https://github.com" icon={<Github size={14} />} />
+              <SocialLink href="https://twitter.com" icon={<Twitter size={14} />} />
+              <SocialLink href="https://facebook.com" icon={<Facebook size={14} />} />
+              <SocialLink href="https://instagram.com" icon={<Instagram size={14} />} />
             </div>
           </div>
 
           {/* Navigation links */}
           <div>
-            <h3 className="font-medium text-gray-900 dark:text-gray-100 mb-3 md:mb-4 text-sm sm:text-base">Navigation</h3>
-            <ul className="space-y-2">
+            <h3 className="font-medium text-gray-800 dark:text-gray-200 mb-2 text-xs sm:text-sm">Navigation</h3>
+            <ul className="space-y-1">
               <FooterLink href="/">Tableau de bord</FooterLink>
               <FooterLink href="/forecast">Prévisions</FooterLink>
               <FooterLink href="/maps">Cartes</FooterLink>
@@ -59,59 +59,48 @@ const Footer = ({ className }: FooterProps) => {
             </ul>
           </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="font-medium text-gray-900 dark:text-gray-100 mb-3 md:mb-4 text-sm sm:text-base">Services</h3>
-            <ul className="space-y-2">
-              <FooterLink href="/premium">Premium</FooterLink>
-              <FooterLink href="/api">API</FooterLink>
-              <FooterLink href="/widgets">Widgets</FooterLink>
-              <FooterLink href="/business">Solutions Pro</FooterLink>
-            </ul>
-          </div>
-
           {/* Contact */}
           <div>
-            <h3 className="font-medium text-gray-900 dark:text-gray-100 mb-3 md:mb-4 text-sm sm:text-base">Contact</h3>
-            <ul className="space-y-2">
-              <li className="flex items-center space-x-2 text-xs sm:text-sm text-gray-600 dark:text-gray-300">
-                <MapPin size={14} className="text-weather-blue flex-shrink-0" />
-                <span>123 Rue de la Météo, Paris</span>
+            <h3 className="font-medium text-gray-800 dark:text-gray-200 mb-2 text-xs sm:text-sm">Contact</h3>
+            <ul className="space-y-1">
+              <li className="flex items-center space-x-1.5 text-xs text-gray-600 dark:text-gray-400">
+                <MapPin size={12} className="text-weather-blue flex-shrink-0" />
+                <span>Lepigeon, Lomé</span>
               </li>
-              <li className="flex items-center space-x-2 text-xs sm:text-sm text-gray-600 dark:text-gray-300">
-                <Mail size={14} className="text-weather-blue flex-shrink-0" />
+              <li className="flex items-center space-x-1.5 text-xs text-gray-600 dark:text-gray-400">
+                <Mail size={12} className="text-weather-blue flex-shrink-0" />
                 <a href="mailto:contact@skystats.com" className="hover:text-weather-blue transition-colors truncate">
-                  contact@skystats.com
+                  pekpelignimdoukevin@gmail.com
                 </a>
               </li>
-              <li className="flex items-center space-x-2 text-xs sm:text-sm text-gray-600 dark:text-gray-300">
-                <Phone size={14} className="text-weather-blue flex-shrink-0" />
-                <a href="tel:+33123456789" className="hover:text-weather-blue transition-colors">
-                  +33 1 23 45 67 89
+              <li className="flex items-center space-x-1.5 text-xs text-gray-600 dark:text-gray-400">
+                <Phone size={12} className="text-weather-blue flex-shrink-0" />
+                <a href="tel:+22893158801" className="hover:text-weather-blue transition-colors">
+                  +228 93 15 88 01
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-6 md:mt-8 pt-4 md:pt-6 border-t border-gray-200 dark:border-gray-800">
-          <div className="flex flex-col sm:flex-row justify-between items-center">
-            <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mb-4 sm:mb-0">
+        <div className="mt-4 md:mt-6 pt-3 md:pt-4 border-t border-gray-200 dark:border-gray-800">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-2">
+            <p className="text-xs text-gray-500 dark:text-gray-400">
               © {currentYear} SkyStats. Tous droits réservés.
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-4">
-              <span className="flex items-center text-xs sm:text-sm text-gray-500 dark:text-gray-400">
-                Fait avec <Heart size={12} className="mx-1 text-red-500" /> en France
+            <div className="flex flex-wrap justify-center items-center gap-3">
+              <span className="flex items-center text-xs text-gray-500 dark:text-gray-400">
+                Fait avec <Heart size={10} className="mx-1 text-red-500" /> au Togo
               </span>
-              <a 
-                href="/terms" 
-                className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 hover:text-weather-blue transition-colors"
+              <a
+                href="/terms"
+                className="text-xs text-weather-darkBlue/60 dark:text-weather-blue/60 hover:text-weather-blue transition-colors"
               >
                 Mentions légales
               </a>
-              <a 
-                href="/privacy" 
-                className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 hover:text-weather-blue transition-colors"
+              <a
+                href="/privacy"
+                className="text-xs text-gray-500 dark:text-gray-400 hover:text-weather-blue transition-colors"
               >
                 Confidentialité
               </a>
@@ -119,26 +108,26 @@ const Footer = ({ className }: FooterProps) => {
           </div>
 
           {/* Special mapbox attribution for the Maps page */}
-          <div className="mt-3 md:mt-4 text-xs text-center text-gray-400 flex flex-wrap justify-center items-center gap-1">
+          <div className="mt-2 md:mt-3 text-[10px] text-center text-gray-400 flex flex-wrap justify-center items-center gap-1">
             <span>Données cartographiques © </span>
-            <a 
-              href="https://www.mapbox.com/" 
+            <a
+              href="https://www.mapbox.com/"
               className="flex items-center hover:text-weather-blue transition-colors"
-              target="_blank" 
+              target="_blank"
               rel="noopener noreferrer"
             >
               Mapbox
-              <ExternalLink size={10} className="ml-1" />
+              <ExternalLink size={8} className="ml-0.5" />
             </a>
             <span className="mx-1"> • </span>
-            <a 
-              href="https://www.openstreetmap.org/" 
+            <a
+              href="https://www.openstreetmap.org/"
               className="flex items-center hover:text-weather-blue transition-colors"
-              target="_blank" 
+              target="_blank"
               rel="noopener noreferrer"
             >
               OpenStreetMap
-              <ExternalLink size={10} className="ml-1" />
+              <ExternalLink size={8} className="ml-0.5" />
             </a>
           </div>
         </div>
@@ -167,8 +156,8 @@ const SocialLink = ({ href, icon }: { href: string; icon: React.ReactNode }) => 
 const FooterLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
   return (
     <li>
-      <Link 
-        to={href} 
+      <Link
+        to={href}
         className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 hover:text-weather-blue transition-colors"
       >
         {children}

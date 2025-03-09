@@ -8,31 +8,31 @@ const alertVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-background text-foreground",
-        destructive:
+        defaut: "bg-background text-foreground",
+        destructif:
           "border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive",
       },
     },
     defaultVariants: {
-      variant: "default",
+      variant: "defaut",
     },
   }
 )
 
-const Alert = React.forwardRef<
+const Alerte = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof alertVariants>
 >(({ className, variant, ...props }, ref) => (
   <div
     ref={ref}
-    role="alert"
+    role="alerte"
     className={cn(alertVariants({ variant }), className)}
     {...props}
   />
 ))
-Alert.displayName = "Alert"
+Alerte.displayName = "Alerte"
 
-const AlertTitle = React.forwardRef<
+const TitreAlerte = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLHeadingElement>
 >(({ className, ...props }, ref) => (
@@ -42,9 +42,9 @@ const AlertTitle = React.forwardRef<
     {...props}
   />
 ))
-AlertTitle.displayName = "AlertTitle"
+TitreAlerte.displayName = "TitreAlerte"
 
-const AlertDescription = React.forwardRef<
+const DescriptionAlerte = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
@@ -54,6 +54,6 @@ const AlertDescription = React.forwardRef<
     {...props}
   />
 ))
-AlertDescription.displayName = "AlertDescription"
+DescriptionAlerte.displayName = "DescriptionAlerte"
 
-export { Alert, AlertTitle, AlertDescription }
+export { Alerte, TitreAlerte as AlertTitle, DescriptionAlerte as AlertDescription }

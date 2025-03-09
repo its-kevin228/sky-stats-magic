@@ -10,7 +10,7 @@ const alertsData = [
   {
     id: 1,
     type: 'Severe Thunderstorm',
-    location: 'Paris, Île-de-France',
+    location: 'Lomé, Maritime',
     date: '2023-06-05',
     time: '15:00',
     severity: 'high',
@@ -20,41 +20,41 @@ const alertsData = [
   {
     id: 2,
     type: 'Flood Warning',
-    location: 'Loire Valley',
+    location: 'Kpalimé, Plateaux',
     date: '2023-06-06',
     time: '08:00',
     severity: 'medium',
-    description: 'Potential flooding along the Loire River following heavy rainfall. Residents in low-lying areas should prepare for possible evacuation.',
+    description: 'Potential flooding in low-lying areas following heavy rainfall. Residents should prepare for possible evacuation.',
     active: true
   },
   {
     id: 3,
     type: 'High Temperature',
-    location: 'Provence-Alpes-Côte d\'Azur',
+    location: 'Sokodé, Centrale',
     date: '2023-06-07',
     time: '12:00',
     severity: 'medium',
-    description: 'Temperatures expected to reach 38°C. Stay hydrated and avoid outdoor activities during peak hours.',
+    description: 'Temperatures expected to reach 35°C. Stay hydrated and avoid outdoor activities during peak hours.',
     active: true
   },
   {
     id: 4,
     type: 'Wind Advisory',
-    location: 'Brittany Coast',
+    location: 'Kara, Kara',
     date: '2023-06-08',
     time: '10:00',
     severity: 'low',
-    description: 'Strong winds expected along the coast with gusts up to 60 km/h. Secure loose objects and exercise caution while driving.',
+    description: 'Strong winds expected with gusts up to 45 km/h. Secure loose objects and exercise caution while driving.',
     active: false
   },
   {
     id: 5,
     type: 'Air Quality Alert',
-    location: 'Lyon Metropolitan Area',
+    location: 'Atakpamé, Plateaux',
     date: '2023-06-09',
     time: '09:00',
     severity: 'medium',
-    description: 'Poor air quality due to increased pollution levels. Those with respiratory conditions should limit outdoor exposure.',
+    description: 'Poor air quality due to increased dust levels. Those with respiratory conditions should limit outdoor exposure.',
     active: true
   }
 ];
@@ -80,16 +80,16 @@ const Alerts = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-weather-bg">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-white to-blue-50/30">
       <Navbar />
       
       <main className="flex-grow container mx-auto px-4 py-6 md:py-10">
         <div className="text-center mb-6 md:mb-8">
           <div className="inline-block mb-2 px-3 py-1 rounded-full bg-weather-blue/10 text-weather-blue text-xs md:text-sm font-medium">
-            Weather Alerts
+            Alertes Météo
           </div>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-weather-darkBlue mb-2">Active Weather Alerts</h1>
-          <p className="text-gray-600 text-sm md:text-base max-w-xl mx-auto">Stay informed about important weather events and hazards in your area</p>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-weather-darkBlue mb-2">Alertes Météo Actives</h1>
+          <p className="text-gray-600 text-sm md:text-base max-w-xl mx-auto">Restez informé des événements météorologiques importants et des dangers dans votre région</p>
         </div>
         
         {/* Filters */}
