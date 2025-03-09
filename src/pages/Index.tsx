@@ -7,6 +7,7 @@ import WeatherStats from '@/components/WeatherStats';
 import CitySelector from '@/components/CitySelector';
 import DailyForecast from '@/components/DailyForecast';
 import WeatherLoader from '@/components/WeatherLoader';
+import Navbar from '@/components/Navbar';
 import { getWeatherData, type WeatherData } from '@/lib/weatherData';
 
 const Index = () => {
@@ -35,6 +36,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-weather-bg">
+      <Navbar />
+      
       <AnimatePresence>
         {loading && <WeatherLoader />}
       </AnimatePresence>
